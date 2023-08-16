@@ -23,8 +23,9 @@ export default {
         'primary': '#8ab4f8',
         'bg': '#202124',
         'border': '#3f4245',
-        'white': 'fff',
+        'white': '#fff',
         'bg-dark':'#161618',
+        'bg-gray-dark':'#191919',
         'gray-50': '#787f80'
       },
       fontFamily: {
@@ -33,6 +34,7 @@ export default {
 
     },
   },
-  plugins: [],
+  plugins: [
+  ],
 }
 

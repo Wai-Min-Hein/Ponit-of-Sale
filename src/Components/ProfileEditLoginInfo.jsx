@@ -1,7 +1,7 @@
 
 const ProfileEditLoginInfo = ({personalInfo, setPersonalInfo}) => {
   return (
-    <div className="information hidden">
+    <div className="information">
     <div className="flex items-center justify-start gap-2 my-6">
       <label
         className=" tracking-wider text-[.95rem] basis-1/6"

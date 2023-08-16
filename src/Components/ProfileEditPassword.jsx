@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProfileEditPassword = ({personalInfo, setPersonalInfo}) => {
   return (
-    <div className="information hidden">
+    <div className="information ">
             <div className="flex items-center justify-start gap-2 ">
               <label
                 className=" tracking-wider text-[.95rem] basis-1/6"

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { AiOutlinePlus, AiOutlineShop } from "react-icons/ai";
 import { BiSolidTimeFive } from "react-icons/bi";
 
@@ -5,6 +6,9 @@ import { HiOutlineMailOpen } from "react-icons/hi";
 import { PiPhoneCall, PiPencilSimpleLine } from "react-icons/pi";
 
 const Profile = () => {
+
+  const [personal, setPersonal] = useState(true)
+  const [login, setLogin] = useState(false)
   return (
     <div className="ml-auto w-4/5 h-screen bg-bg p-6 relative">
       <div className="flex items-center justify-between">
@@ -66,11 +70,11 @@ const Profile = () => {
         </div>
 
         <div className="bg-bg-dark flex items-center justify-start gap-8 pb-6 pt-4 px-12 border-b-2 border-border translate-y-[-4rem]">
-          <button className="flex items-center justify-start gap-2">
+          <button onClick={() => (setPersonal(true), setLogin(false))} className="flex items-center justify-start gap-2">
             <AiOutlineShop className="text-primary text-lg" />
             <h6 className="text-sm tracking-wide font-semibold">Personal</h6>
           </button>
-          <button className="flex items-center justify-start gap-2">
+          <button onClick={() => (setPersonal(false), setLogin(true))} className="flex items-center justify-start gap-2">
             <AiOutlineShop className="text-primary text-lg" />
             <h6 className="text-sm tracking-wide font-semibold">
               Login information
@@ -85,7 +89,7 @@ const Profile = () => {
         {/* show by click start */}
 
         <div className="px-12 pb-6 bg-[#1a1a1a] translate-y-[-1.5rem]">
-            <div className="sm:hidden">
+            <div className={`${personal? 'block': 'hidden'}`}>
               <div className="flex items-center justify-between gap-2">
                 <h1 className="opacity-80 tracking-wider text-[.9rem] basis-1/6">
                   Date Of Birth
@@ -109,7 +113,7 @@ const Profile = () => {
               </div>
             </div>
 
-            <div className="">
+            <div  className={`${login? 'block': 'hidden'}`} >
               <div className="flex items-center justify-start gap-2">
                 <h1 className="opacity-80 tracking-wider text-[.9rem] basis-1/6">
                 Phone

@@ -17,7 +17,9 @@ const ProfileEdit = () => {
     gender: "",
     address: "",
   });
-  console.log(personalInfo);
+  const [personal, setPersonal] = useState(true)
+  const [login, setLogin] = useState(false)
+  const [password, setPassword] = useState(false)
 
   return (
     <div className="ml-auto w-4/5 min-h-screen bg-bg p-6 relative">
@@ -80,17 +82,17 @@ const ProfileEdit = () => {
         </div>
 
         <div className="bg-bg-dark flex items-center justify-start gap-8 pb-6 pt-4 px-12 border-b-2 border-border translate-y-[-4rem]">
-          <button className="flex items-center justify-start gap-2">
+          <button onClick={() => (setPersonal(true), setLogin(false), setPassword(false))} className="flex items-center justify-start gap-2">
             <AiOutlineShop className="text-primary text-lg" />
             <h6 className="text-sm tracking-wide font-semibold">Personal</h6>
           </button>
-          <button className="flex items-center justify-start gap-2">
+          <button onClick={() => (setPersonal(false), setLogin(true), setPassword(false))}  className="flex items-center justify-start gap-2">
             <AiOutlineShop className="text-primary text-lg" />
             <h6 className="text-sm tracking-wide font-semibold">
               Login information
             </h6>
           </button>
-          <button className="flex items-center justify-start gap-2">
+          <button  onClick={() => (setPersonal(false), setLogin(false), setPassword(true))}  className="flex items-center justify-start gap-2">
             <AiOutlineShop className="text-primary text-lg" />
             <h6 className="text-sm tracking-wide font-semibold">Password</h6>
           </button>
@@ -99,11 +101,21 @@ const ProfileEdit = () => {
         {/* show by click start */}
 
         <div className="px-12 pb-6 bg-[#1a1a1a] translate-y-[-1.5rem]">
+
+          <div className={`${personal?'block': 'hidden'}`}>
           <ProfileEditPersonal personalInfo={personalInfo} setPersonalInfo={setPersonalInfo}/>
 
-         <ProfileEditLoginInfo personalInfo={personalInfo} setPersonalInfo={setPersonalInfo}/>
+          </div>
+          <div className={`${login?'block': 'hidden'}`}>
+          <ProfileEditLoginInfo personalInfo={personalInfo} setPersonalInfo={setPersonalInfo}/>
+
+          </div>
+          <div className={`${password?'block': 'hidden'}`}>
 
           <ProfileEditPassword personalInfo={personalInfo} setPersonalInfo={setPersonalInfo}/>
+          </div>
+
+
         </div>
 
         {/* show by click end */}

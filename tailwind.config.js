@@ -21,11 +21,14 @@ export default {
     extend: {
       colors: {
         'primary': '#8ab4f8',
+        'danger': '#FE4949',
+        'btn' : '#8AB4F8',
         'bg': '#202124',
         'border': '#3f4245',
-        'white': 'fff',
+        'white': '#fff',
         'bg-dark':'#161618',
-        'gray-50': '#787f80'
+        'gray-50': '#787f80',
+        'gray-100': '#D9D9D91A'
       },
       fontFamily: {
         'montserrat': ['Montserrat','sans-serif'],

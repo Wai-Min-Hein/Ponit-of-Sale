@@ -1,3 +1,4 @@
+
 import { Route, Routes } from "react-router-dom"
 import ViewUser from "./Page/User/Overview/ViewUser"
 import ViewList from "./Page/User/Overview/ViewList"
@@ -34,9 +35,21 @@ const App = () => {
         <Route path="/create_t" element={<TCreate/>}/>
         <Route path="/ban_user" element={<BanUser/>}/>
     </Routes>
-    
-    </div>
-  )
-}
 
-export default App
+import { Route, Routes } from "react-router-dom";
+import Login from "./Pages/Login";
+import Profile from "./Pages/Profile";
+import ProfileEdit from "./Pages/ProfileEdit";
+const App = () => {
+  return (
+    <div>
+      <Routes>
+        <Route element={<Login />} path="/login" />
+        <Route element={<Profile />} path="/" />
+        <Route element={<ProfileEdit />} path="/edit" />
+      </Routes>
+    </div>
+  );
+};
+
+export default App;

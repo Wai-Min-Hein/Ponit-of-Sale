@@ -1,13 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+/* <---overview UserProfile---> */
+.mantine-9ajpia{
+    color: #787f80 ;
+    padding: 0 !important;
+}
+
+.mantine-9ajpia[data-active] {
+    background-color: #161618 !important;
+    color: white;
+}
+
+.mantine-9ajpia:hover {
+    background-color: #161618 !important;
+    color: #8ab4f8;
+}
+
+/* <-----overview List----> */
+.mantine-y08onz>thead>tr>th{
+    border-color: #3f4245;
+    color: white;
+    opacity: 0.8;
+    padding: 0.9rem;
+    padding-bottom: 0.7rem;
+}
+.mantine-y08onz>tbody>tr>td{
+    padding: 0.9rem;
+    padding-bottom: 0.8rem;
+    border-color: #3f4245;
+}
+
+.mantine-19pz3dh {
+    background-color: #161618;
+    color: white;
+}
+.mantine-1k9itrp {
+    font-size: 1.5rem;
+}
+
+.mantine-1q36a81 {
+    background-color: #161618;
+    opacity: 0.9;
+    text-align: center;
+    color: white;
+    display: grid;
+    gap: 20px;
+    padding: 50px 0;
+    padding-top: 50px !important;
+}
+
+/* <----create user first step------> */
+.mantine-egbnkr{
+    background-color: #161618;
+    border: 1px solid #3f4245;
+    color: white;
+    opacity: 0.7;
+    font-weight: 300;
+}
+.mantine-16auntx {
+    top: calc(2.625rem + calc(0.625rem / 2));
+    left: calc(2.625rem / 2);
+    height: 100vh;
+    position: absolute;
+    border-left: 1px solid #3f4245;
+}
+.mantine-1y0dcw0{
+    margin-top: 1rem;
+    color: white;
+    opacity: 0.7;
+    font-weight: normal !important;
+}
+.mantine-kegijc{
+    color: #787f80;
+}
+.mantine-1cu6yj8{
+    background-color: #161618;
+    border: 1px solid #3f4245;
+}
+.mantine-cpetpa{
+    border-left: 1px solid #3f4245;
 
 body{
   font-family: 'Montserrat', sans-serif;

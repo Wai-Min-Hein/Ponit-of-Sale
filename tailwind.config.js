@@ -30,6 +30,7 @@ export default {
       },
       fontFamily: {
         'montserrat': ['Montserrat','sans-serif'],
+        'genos': ['Genos','sans-serif'],
       },
 
     },

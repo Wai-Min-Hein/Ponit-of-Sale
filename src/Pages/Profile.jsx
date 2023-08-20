@@ -90,20 +90,20 @@ const Profile = () => {
 
         <div className="px-12 pb-6 bg-[#1a1a1a] translate-y-[-1.5rem]">
             <div className={`${personal? 'block': 'hidden'}`}>
-              <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center justify-start gap-2">
                 <h1 className="opacity-80 tracking-wider text-[.9rem] basis-1/6">
                   Date Of Birth
                 </h1>
                 <p className="text-sm font-medium tracking-wide">: 12/4/1999</p>
               </div>
 
-              <div className="flex items-center justify-between gap-2 my-6">
+              <div className="flex items-center justify-start gap-2 my-6">
                 <h1 className="opacity-80 tracking-wider text-[.9rem] basis-1/6">
                   Gender
                 </h1>
                 <p className="text-sm font-medium tracking-wide">: Male</p>
               </div>
-              <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center justify-start gap-2">
                 <h1 className="opacity-80 tracking-wider text-[.9rem] basis-1/6">
                   Address
                 </h1>

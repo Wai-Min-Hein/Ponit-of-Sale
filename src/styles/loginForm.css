@@ -1,0 +1,25 @@
+
+.login-form .mantine-PasswordInput-label,.login-form .mantine-TextInput-label,.login-form .mantine-Checkbox-label {
+    color: white !important;
+  
+  }
+  .login-form .mantine-TextInput-input,.login-form .mantine-PasswordInput-input{
+  border:  2px solid #3f4245;
+  color: #fff;
+  padding: 1rem;
+    background-color: transparent !important;
+  
+  }
+  .login-form .mantine-PasswordInput-innerInput{
+    color: #fff;
+  }
+  
+  .login-form .mantine-Checkbox-input{
+  background-color: transparent !important;
+  border:  2px solid #3f4245;
+  }
+  
+  
+  .login-form .mantine-PasswordInput-visibilityToggle:hover{
+    background-color: transparent !important;
+  }

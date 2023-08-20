@@ -6,6 +6,11 @@
 @tailwind utilities;
 
 
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+  }
+
 /* <---overview UserProfile---> */
 .mantine-9ajpia{
     color: #787f80 ;
@@ -84,34 +89,5 @@
     border: 1px solid #3f4245;
 }
 .mantine-cpetpa{
-    border-left: 1px solid #3f4245;
+    border-left: 1px solid #3f4245;}
 
-body{
-  font-family: 'Montserrat', sans-serif;
-  color: white;
-}
-
-.login-form .mantine-PasswordInput-label,.login-form .mantine-TextInput-label,.login-form .mantine-Checkbox-label {
-  color: white !important;
-
-}
-.login-form .mantine-TextInput-input,.login-form .mantine-PasswordInput-input{
-border:  2px solid #3f4245;
-color: #fff;
-padding: 1rem;
-  background-color: transparent !important;
-
-}
-.login-form .mantine-PasswordInput-innerInput{
-  color: #fff;
-}
-
-.login-form .mantine-Checkbox-input{
-background-color: transparent !important;
-border:  2px solid #3f4245;
-}
-
-
-.login-form .mantine-PasswordInput-visibilityToggle:hover{
-  background-color: transparent !important;
-}

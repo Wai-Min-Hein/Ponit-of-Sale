@@ -1,22 +1,26 @@
 
 import { Route, Routes } from "react-router-dom"
-import ViewUser from "./Page/User/Overview/ViewUser"
-import ViewList from "./Page/User/Overview/ViewList"
-import FCreate from "./Page/User/CreateUser/FCreate"
-import SCreate from "./Page/User/CreateUser/SCreate"
-import TCreate from "./Page/User/CreateUser/TCreate"
-import LoginInfo from "./Page/User/Overview/UserInfo/LoginInfo"
-import Password from "./Page/User/Overview/UserInfo/Password"
-import Personal from "./Page/User/Overview/UserInfo/Personal"
-import Upuser from "./Page/User/Overview/UpUser"
-import UpPersonal from "./Page/User/Overview/UpUser/UpPersonal"
-import UpLogin from "./Page/User/Overview/UpUser/UpLogin"
-import UpPassword from "./Page/User/Overview/UpUser/UpPassword"
-import BanUser from "./Page/User/BanUser/BanUser"
+import ViewUser from "./Pages/User/Overview/ViewUser"
+import ViewList from "./Pages/User/Overview/ViewList"
+import FCreate from "./Pages/User/CreateUser/FCreate"
+import SCreate from "./Pages/User/CreateUser/SCreate"
+import TCreate from "./Pages/User/CreateUser/TCreate"
+import LoginInfo from "./Pages/User/Overview/UserInfo/LoginInfo"
+import Password from "./Pages/User/Overview/UserInfo/Password"
+import Personal from "./Pages/User/Overview/UserInfo/Personal"
+import Upuser from "./Pages/User/Overview/UpUser"
+import UpPersonal from "./Pages/User/Overview/UpUser/UpPersonal"
+import UpLogin from "./Pages/User/Overview/UpUser/UpLogin"
+import UpPassword from "./Pages/User/Overview/UpUser/UpPassword"
+import BanUser from "./Pages/User/BanUser/BanUser"
+import Login from "./Pages/Login"
+import Profile from "./Pages/Profile"
+import ProfileEdit from "./Pages/ProfileEdit"
 
 const App = () => {
-  return (
-    <div>
+  return(
+    <div className="">
+
     <Routes>
       {/* <---User---> */}
         <Route path="/view_user" element={<ViewUser/>}>
@@ -34,22 +38,13 @@ const App = () => {
         <Route path="/create_s" element={<SCreate/>}/>
         <Route path="/create_t" element={<TCreate/>}/>
         <Route path="/ban_user" element={<BanUser/>}/>
-    </Routes>
-
-import { Route, Routes } from "react-router-dom";
-import Login from "./Pages/Login";
-import Profile from "./Pages/Profile";
-import ProfileEdit from "./Pages/ProfileEdit";
-const App = () => {
-  return (
-    <div>
-      <Routes>
         <Route element={<Login />} path="/login" />
         <Route element={<Profile />} path="/" />
         <Route element={<ProfileEdit />} path="/edit" />
-      </Routes>
+    </Routes>
     </div>
-  );
-};
 
-export default App;
+  )
+}
+export default App
+

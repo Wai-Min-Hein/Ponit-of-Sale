@@ -28,7 +28,7 @@ export default {
         'white': '#fff',
         'bg-dark':'#161618',
         'gray-50': '#787f80',
-        'gray-100': '#D9D9D91A'
+        'gray-100': '#D9D9D91A',
         'bg-gray-dark':'#191919',
       },
       fontFamily: {

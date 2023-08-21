@@ -1,5 +1,4 @@
 import { Radio, Stepper } from '@mantine/core'
-import axios from 'axios'
 import React, { useState } from 'react'
 import {AiOutlineArrowRight,AiOutlineLogin} from 'react-icons/ai'
 import {FiUserCheck} from 'react-icons/fi'
@@ -29,7 +28,7 @@ const FCreate = () => {
     <div className='container mx-auto grid gap-10'>
       <div className="flex justify-between items-center py-3 ">
           <div>
-          <h1 className='text-xl text-white '>User</h1>
+          <h1 className='text-xl text-white mb-2'>User</h1>
           <span className='text-gray-50'>User / Create User</span>
           </div>
           <Link to={'/view_list'}>

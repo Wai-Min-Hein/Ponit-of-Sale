@@ -5,6 +5,7 @@ import { useState } from 'react';
 import {AiOutlineShop} from 'react-icons/ai'
 import { Box, NavLink } from '@mantine/core';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
+import '../../../styles/createuser.css'
 const data = [
     { icon: AiOutlineShop, label: 'Personal', link: '/up_user'},
     {

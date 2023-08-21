@@ -1,9 +1,7 @@
-
 import { configureStore } from "@reduxjs/toolkit";
 import { authApi } from "../Api/AuthApi";
 import cashierSlice from "../Slice/cashierSlice";
 import { productApi } from "../Api/productApi";
-
 
 export const store = configureStore({
   reducer: {

@@ -6,7 +6,7 @@ import {TbPhotoCheck} from 'react-icons/tb'
 import {PiUserFocusDuotone} from 'react-icons/pi'
 import {BiEditAlt} from 'react-icons/bi'
 import { Link } from 'react-router-dom'
-const TCreate = () => {
+const ProductPhoto = () => {
     const [active, setActive] = useState(0);
     const handleClear = ()=>{
 
@@ -16,12 +16,12 @@ const TCreate = () => {
     <div className='container mx-auto grid gap-10'>
       <div className="flex justify-between items-center py-3 ">
           <div>
-          <h1 className='text-xl text-white mb-2'>User</h1>
-          <span className='text-gray-50'>User / Create User</span>
+          <h1 className='text-xl text-white mb-2'>Add Product</h1>
+          <span className='text-gray-50'>Inventory / Add Product</span>
           </div>
           <Link to={'/view_list'}>
           <button className='bg-primary flex items-center gap-2 text-bg-dark px-4 py-1 border-0 rounded-md transition hover:text-white'>
-             <span>User List</span>
+             <span>Product List</span>
           </button>
           </Link>
       </div>
@@ -56,4 +56,4 @@ const TCreate = () => {
   )
 }
 
-export default TCreate
+export default ProductPhoto

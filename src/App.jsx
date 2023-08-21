@@ -16,12 +16,17 @@ import BanUser from "./Pages/User/BanUser/BanUser"
 import Login from "./Pages/Login"
 import Profile from "./Pages/Profile"
 import ProfileEdit from "./Pages/ProfileEdit"
+
 import Cashier from "./Pages/Cashier"
 import Checkout from "./Pages/Checkout"
 
+import Sidebar from "./Components/Sidebar"
+
+
 const App = () => {
   return(
-    <div className="">
+    <div className="flex h-full bg-bg-dark">
+      <Sidebar />
 
     <Routes>
       {/* <---User---> */}

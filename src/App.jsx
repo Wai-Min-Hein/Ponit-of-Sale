@@ -16,6 +16,8 @@ import BanUser from "./Pages/User/BanUser/BanUser"
 import Login from "./Pages/Login"
 import Profile from "./Pages/Profile"
 import ProfileEdit from "./Pages/ProfileEdit"
+import Cashier from "./Pages/Cashier"
+import Checkout from "./Pages/Checkout"
 
 const App = () => {
   return(
@@ -41,6 +43,8 @@ const App = () => {
         <Route element={<Login />} path="/login" />
         <Route element={<Profile />} path="/" />
         <Route element={<ProfileEdit />} path="/edit" />
+        <Route element={<Cashier />} path="/cashier" />
+        <Route element={<Checkout />} path="/checkout" />
     </Routes>
     </div>
 

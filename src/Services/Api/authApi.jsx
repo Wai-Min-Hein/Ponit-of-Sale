@@ -13,14 +13,16 @@ export const authApi = createApi({
       }),
       invalidatesTags:['auth']
     }),
+
     register: builder.mutation({
-        query: (user) => ({
+        query: (regUser) => ({
           url: `/register`,
           method: 'POST',
-          body: user
+          body: regUser
         }),
         invalidatesTags:['auth']
       }),
+
       logout: builder.mutation({
         query: (token) => ({
           url: `/logout`,
@@ -28,7 +30,10 @@ export const authApi = createApi({
           headers:{authorization: `Bearer ${token}`}
         }),
         invalidatesTags:['auth']
-      })
+      }),
+
+     
+    
   }),
   
 })

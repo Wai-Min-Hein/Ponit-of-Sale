@@ -1,12 +1,6 @@
 import React, { useState } from "react";
-import { Collapse, Drawer } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import {
-  AiOutlineMenuFold,
-  AiOutlineHome,
-  AiOutlineShop,
-  AiOutlineDown,
-} from "react-icons/ai";
+import { Collapse } from "@mantine/core";
+import { AiOutlineHome, AiOutlineShop, AiOutlineDown } from "react-icons/ai";
 import { BiRadioCircleMarked } from "react-icons/bi";
 import { FaClipboardList } from "react-icons/fa";
 import {
@@ -15,28 +9,23 @@ import {
   PiUserSquareBold,
   PiSignOut,
 } from "react-icons/pi";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const [saleOpen, setSaleOpen] = useState(true);
   const [invOpen, setInvOpen] = useState(true);
   const [userOpen, setUserOpen] = useState(true);
   const [pfOpen, setPfOpen] = useState(true);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-
-  const sidebarHandler = () => {};
 
   return (
-    <div className=" w-1/5 h-full bg-bg-dark text-white border-r border-r-border text-sm cursor-pointer">
+    <div className="w-1/5 h-screen bg-bg-dark text-white border-r border-r-border text-sm cursor-pointer">
       {/* Overview */}
-      <div className="flex items-center justify-between border-b border-border gap-2 py-2.5 pr-3.5 pl-5">
-        <div className="flex items-center  gap-2 ">
+      <NavLink to={"/"}>
+        <div className="flex items-center border-b border-border gap-2 py-2.5 pr-3.5 pl-5">
           <AiOutlineHome />
           <span>Overview</span>
         </div>
-        <button onClick={() => setSidebarOpen(!sidebarOpen)}>
-          <AiOutlineMenuFold />
-        </button>
-      </div>
+      </NavLink>
       {/* Sale */}
       <div
         onClick={() => setSaleOpen(!saleOpen)}
@@ -49,10 +38,12 @@ const Sidebar = () => {
         <AiOutlineDown />
       </div>
       <Collapse in={saleOpen} className="text-xs">
-        <div className="flex items-center gap-2 py-2.5 pr-3.5 pl-5">
-          <BiRadioCircleMarked />
-          <span>Cashier</span>
-        </div>
+        <NavLink to={"/cashier"}>
+          <div className="flex items-center gap-2 py-2.5 pr-3.5 pl-5">
+            <BiRadioCircleMarked />
+            <span>Cashier</span>
+          </div>
+        </NavLink>
         <div className="flex items-center border-b border-border gap-2 py-2.5 pr-3.5 pl-5">
           <BiRadioCircleMarked />
           <span>Recent</span>
@@ -129,10 +120,12 @@ const Sidebar = () => {
           <BiRadioCircleMarked />
           <span>My Account</span>
         </div>
-        <div className="flex items-center border-b border-border gap-2 py-2.5 pr-3.5 pl-5">
-          <BiRadioCircleMarked />
-          <span>Edit</span>
-        </div>
+        <NavLink to={"/edit"}>
+          <div className="flex items-center border-b border-border gap-2 py-2.5 pr-3.5 pl-5">
+            <BiRadioCircleMarked />
+            <span>Edit</span>
+          </div>
+        </NavLink>
       </Collapse>
       {/* Sign Out */}
       <div className="flex items-center border-b border-border gap-2 py-2.5 pr-3.5 pl-5">

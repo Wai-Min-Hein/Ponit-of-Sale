@@ -1,4 +1,3 @@
-
 import { Route, Routes } from "react-router-dom"
 import ViewUser from "./Pages/User/Overview/ViewUser"
 import ViewList from "./Pages/User/Overview/ViewList"
@@ -28,13 +27,23 @@ import Checkout from "./Pages/Checkout"
 
 import Sidebar from "./Components/Sidebar"
 
+import Sidebar from "./Components/Sidebar";
+import Navbar from "./Components/Navbar";
+import { useState } from "react";
+import SidebarJr from "./Components/SidebarJr";
 
 const App = () => {
-  return(
-    <div className="flex h-full bg-bg-dark">
-      <Sidebar />
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    <Routes>
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+  return (
+    <div className="w-full h-full bg-bg-dark">
+      <Navbar toggleSidebar={toggleSidebar}/>
+      <div className="flex bg-bg-dark">
+        {isSidebarOpen ? <SidebarJr /> : <Sidebar />}
+        <Routes>
       {/* <---User---> */}
         <Route path="/view_user" element={<ViewUser/>}>
           <Route index element={<Personal/>}/>
@@ -64,9 +73,9 @@ const App = () => {
         <Route element={<Cashier />} path="/cashier" />
         <Route element={<Checkout />} path="/checkout" />
     </Routes>
+      </div>
+
     </div>
-
-  )
-}
-export default App
-
+  );
+};
+export default App;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLoginMutation } from "../Services/Api/AuthApi";
+import { useLoginMutation } from "../Services/Api/authApi";
 import loginImage from "../../Images/loginImage.png";
 import "../styles/loginForm.css"
 

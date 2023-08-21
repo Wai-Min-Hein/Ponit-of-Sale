@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { authApi } from '../Api/AuthApi'
+import { authApi } from '../Api/authApi'
 
 export const store = configureStore({
   reducer: {

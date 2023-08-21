@@ -1,6 +1,10 @@
-import { useState } from "react";
-import { useLoginMutation } from "../Services/Api/authApi";
+
+
+import {useState } from "react";
+import {   useLoginMutation, useRegisterMutation } from "../Services/Api/AuthApi";
+
 import loginImage from "../../Images/loginImage.png";
+
 import "../styles/loginForm.css"
 
 import { useForm } from "@mantine/form";
@@ -12,7 +16,25 @@ const Login = () => {
     password: "asdffdsa",
   });
 
+
+  const regUser = {
+    name: 'wai min',
+    email: 'example@gmail.com',
+    password: '11111111',
+    address: 'No. 11, example str, example city',
+    gender: 'Male',
+    date_of_birth: '11/11/2003'
+
+   
+  }
+  
+
+
   const [login] = useLoginMutation();
+
+  const [register] = useRegisterMutation()
+
+
 
   const form = useForm({
     initialValues: { email: "lex@gmail.com", password: "asdffdsa" },
@@ -23,16 +45,32 @@ const Login = () => {
         value < 8 ? "Password must be at least 8 to register" : null,
     },
   });
-
   const loginHandler = async (e) => {
     e.preventDefault();
     setUser(form.values);
+    
+
     try {
-      const { data } = await login(user);
-      console.log(data);
+      const {data} = await login(user);
+      console.log(data)
       localStorage.setItem("token", data?.plainTextToken);
     } catch (error) {
       console.log("Cannot login.Try again", error);
+    }
+  };
+
+  const regHandler = async () => {
+    
+    try {
+      const res = await register(regUser);
+      if(res?.error){
+        console.log(res?.error)
+      }
+      if(res?.success){
+        console.log(res?.success)
+      }
+    } catch (error) {
+      console.log("Cannot register.Try again", error);
     }
   };
 
@@ -76,12 +114,22 @@ const Login = () => {
 
             <Button
               type="submit"
-              className="px-4 py-2 bg-primary  rounded text-sm uppercase text-bg-dark tracking-wide font-semibold mt-6 w-full"
+              className="px-4 py-2 bg-primary  rounded text-sm uppercase text-bg-dark tracking-wide font-semibold mt-6 w-full "
               mt="sm"
             >
               login
             </Button>
+
+
           </form>
+          <Button
+              type="submit"
+              className="px-4 py-2 bg-primary  rounded text-sm uppercase text-bg-dark tracking-wide font-semibold mt-6 w-full"
+              mt="sm"
+              onClick={() => regHandler()}
+            >
+              Register
+            </Button>
         </div>
       </div>
     </div>

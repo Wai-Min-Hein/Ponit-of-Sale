@@ -23,9 +23,16 @@ import ProductPhoto from "./Pages/Product/Addproduct/ProductPhoto"
 import Stock from "./Pages/Product/Stock"
 import ManageBrand from "./Pages/Product/ManageBrand"
 
+import Cashier from "./Pages/Cashier"
+import Checkout from "./Pages/Checkout"
+
+import Sidebar from "./Components/Sidebar"
+
+
 const App = () => {
   return(
-    <div className="">
+    <div className="flex h-full bg-bg-dark">
+      <Sidebar />
 
     <Routes>
       {/* <---User---> */}
@@ -54,6 +61,8 @@ const App = () => {
         <Route element={<Login />} path="/login" />
         <Route element={<Profile />} path="/" />
         <Route element={<ProfileEdit />} path="/edit" />
+        <Route element={<Cashier />} path="/cashier" />
+        <Route element={<Checkout />} path="/checkout" />
     </Routes>
     </div>
 

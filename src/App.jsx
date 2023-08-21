@@ -25,8 +25,6 @@ import ManageBrand from "./Pages/Product/ManageBrand"
 import Cashier from "./Pages/Cashier"
 import Checkout from "./Pages/Checkout"
 
-import Sidebar from "./Components/Sidebar"
-
 import Sidebar from "./Components/Sidebar";
 import Navbar from "./Components/Navbar";
 import { useState } from "react";

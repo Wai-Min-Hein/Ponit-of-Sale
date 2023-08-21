@@ -1,0 +1,32 @@
+/* <-----overview List----> */
+.mantine-y08onz>thead>tr>th{
+    border-color: #3f4245;
+    color: white;
+    opacity: 0.8;
+    padding: 0.9rem;
+    padding-bottom: 0.7rem;
+}
+.mantine-y08onz>tbody>tr>td{
+    padding: 0.9rem;
+    padding-bottom: 0.8rem;
+    border-color: #3f4245;
+}
+
+.mantine-19pz3dh {
+    background-color: #161618;
+    color: white;
+}
+.mantine-1k9itrp {
+    font-size: 1.5rem;
+}
+
+.mantine-1q36a81 {
+    background-color: #161618;
+    opacity: 0.9;
+    text-align: center;
+    color: white;
+    display: grid;
+    gap: 20px;
+    padding: 50px 0;
+    padding-top: 50px !important;
+}

@@ -16,6 +16,12 @@ import BanUser from "./Pages/User/BanUser/BanUser"
 import Login from "./Pages/Login"
 import Profile from "./Pages/Profile"
 import ProfileEdit from "./Pages/ProfileEdit"
+import ProductOverview from "./Pages/Product/ProductsOverview"
+import AddProduct from "./Pages/Product/Addproduct/AddProduct"
+import AddPrice from "./Pages/Product/Addproduct/Price"
+import ProductPhoto from "./Pages/Product/Addproduct/ProductPhoto"
+import Stock from "./Pages/Product/Stock"
+import ManageBrand from "./Pages/Product/ManageBrand"
 
 const App = () => {
   return(
@@ -38,6 +44,13 @@ const App = () => {
         <Route path="/create_s" element={<SCreate/>}/>
         <Route path="/create_t" element={<TCreate/>}/>
         <Route path="/ban_user" element={<BanUser/>}/>
+        {/* <----product----> */}
+        <Route path="/prod_view" element={<ProductOverview/>}/>
+        <Route path="/addproduct" element={<AddProduct/>}/>
+        <Route path="/addprice" element={<AddPrice/>}/>
+        <Route path="/photoproduct" element={<ProductPhoto/>}/>
+        <Route path="/stock" element={<Stock/>}/>
+        <Route path="/managebrand" element={<ManageBrand/>}/>
         <Route element={<Login />} path="/login" />
         <Route element={<Profile />} path="/" />
         <Route element={<ProfileEdit />} path="/edit" />

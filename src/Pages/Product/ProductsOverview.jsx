@@ -1,11 +1,11 @@
-import { Button, CheckIcon, Group, Modal, Pagination, Table,Text } from '@mantine/core'
+import { Button, CheckIcon, Group, Modal, Pagination, Table,Tabs,Text } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import React, { useState } from 'react'
 import {AiOutlinePlus,AiOutlineMinus,AiOutlineEdit,AiOutlineArrowRight,AiOutlineSearch} from 'react-icons/ai'
 import { BiMinus } from 'react-icons/bi'
 import { Link, useNavigate } from 'react-router-dom'
-import "../../../styles/userlist.css"
-const ViewList = () => {
+import '../../styles/userlist.css';
+const ProductOverview = () => {
   const [search,setSearch] = useState('')
   const [opened, { open, close }] = useDisclosure(false);
   const nav = useNavigate()
@@ -17,15 +17,23 @@ const ViewList = () => {
     <div className='container mx-auto grid gap-5'>
       <div className="flex justify-between items-center py-3">
           <div>
-          <h1 className='text-xl text-white mb-2'>User</h1>
-          <span className='text-gray-50'>User / Overview</span>
+          <h1 className='text-xl text-white mb-2'>Products</h1>
+          <span className='text-gray-50'>Inventory / Products</span>
           </div>
-          <Link to={'/create_f'}>
-          <button className='bg-primary flex items-center gap-2 text-bg-dark px-4 py-1 border-0 rounded-md transition hover:text-white'>
-                <AiOutlinePlus/>
-                <span>Create User</span>
+          <div className='flex gap-5'>
+          <Link to={'/shop'}>
+          <button className='bg-bg  border-border flex items-center gap-2 text-primary px-4 py-1 border rounded-md transition hover:text-white'>
+                <span>Go to Shop</span>
               </button>
           </Link>
+          <Link to={'/addproduct'}>
+          <button className='bg-primary flex items-center gap-2 text-bg-dark px-4 py-1 border-0 rounded-md transition hover:text-white'>
+                <AiOutlinePlus/>
+                <span>Add Product</span>
+              </button>
+          </Link>
+          </div>
+ 
       </div>
       
       <div className="flex justify-between items-end py-3">
@@ -49,6 +57,7 @@ const ViewList = () => {
               <option value="filter" >All File</option>
             </select>
           </span>
+          
         </div>
       </div>
       
@@ -58,20 +67,24 @@ const ViewList = () => {
           <tr className=''>
             <th>NO</th>
             <th>NAME</th>
-            <th>POSITION</th>
-            <th>EMAIL</th>
+            <th>BRAND</th>
+            <th>UNIT</th>
+            <th>SALE PRICE</th>
+            <th>TOTAL STOCK</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           <tr className=''>
-            <td>2</td>
-            <td className=' uppercase'>Nyeint</td>
-            <td className=' capitalize'>Admin</td>
-            <td>myain123@gmail.com</td>
+            <td>1</td>
+            <td className=' uppercase'>water Melon</td>
+            <td className=' capitalize'>Melon</td>
+            <td>5</td>
+            <td>1,000</td>
+            <td>100</td>
             <td className='flex gap-3 justify-end'>
               <Button onClick={open} className='!px-0 hover:bg-bg'>
-              <AiOutlineMinus className='w-8 h-8 bg-border opacity-60 text-white rounded-full p-2'/>
+              <AiOutlinePlus className='w-8 h-8 bg-border opacity-60 text-white rounded-full p-2'/>
               </Button>
               <Link to={'/edit'}>
               <AiOutlineEdit className='w-8 h-8 bg-border opacity-60 text-white rounded-full p-2'/>
@@ -121,4 +134,4 @@ const ViewList = () => {
   )
 }
 
-export default ViewList
+export default ProductOverview

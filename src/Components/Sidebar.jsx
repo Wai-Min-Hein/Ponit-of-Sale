@@ -102,10 +102,12 @@ const Sidebar = () => {
         </div>
       </Collapse>
       {/* Media */}
-      <div className="flex items-center border-b border-border gap-2 py-2.5 pr-3.5 pl-5">
-        <PiImagesSquareBold />
-        <span>Media </span>
-      </div>
+      <NavLink to={"/media"}>
+        <div className="flex items-center border-b border-border gap-2 py-2.5 pr-3.5 pl-5">
+          <PiImagesSquareBold />
+          <span>Media </span>
+        </div>
+      </NavLink>
       {/* Profile */}
       <div
         onClick={() => setPfOpen(!pfOpen)}

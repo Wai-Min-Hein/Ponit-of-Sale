@@ -28,15 +28,14 @@ const SidebarJr = ({ isOpen }) => {
       </NavLink>
       {/* Sale */}
       <NavLink to={"/cashier"}>
-
-      <div
-        onClick={() => setSaleOpen(!saleOpen)}
-        className="border-b border-border py-2.5 pr-3.5 pl-5"
-      >
-        {/* <div className="flex items-center  gap-2 "> */}
-        <AiOutlineShop />
-        {/* </div> */}
-      </div>
+        <div
+          onClick={() => setSaleOpen(!saleOpen)}
+          className="border-b border-border py-2.5 pr-3.5 pl-5"
+        >
+          {/* <div className="flex items-center  gap-2 "> */}
+          <AiOutlineShop />
+          {/* </div> */}
+        </div>
       </NavLink>
 
       {/* Inventory */}
@@ -60,9 +59,11 @@ const SidebarJr = ({ isOpen }) => {
       </div>
 
       {/* Media */}
-      <div className="border-b border-border gap-2 py-2.5 pr-3.5 pl-5">
-        <PiImagesSquareBold />
-      </div>
+      <NavLink to={"/media"}>
+        <div className="border-b border-border gap-2 py-2.5 pr-3.5 pl-5">
+          <PiImagesSquareBold />
+        </div>
+      </NavLink>
       {/* Profile */}
       <div
         onClick={() => setPfOpen(!pfOpen)}

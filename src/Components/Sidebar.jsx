@@ -18,7 +18,7 @@ const Sidebar = () => {
   const [pfOpen, setPfOpen] = useState(true);
 
   return (
-    <div className="w-1/5 h-screen bg-bg-dark text-white border-r border-r-border text-sm cursor-pointer">
+    <div className="w-1/5 bg-bg-dark text-white border-r border-r-border text-sm cursor-pointer">
       {/* Overview */}
       <NavLink to={"/"}>
         <div className="flex items-center border-b border-border gap-2 py-2.5 pr-3.5 pl-5">
@@ -61,10 +61,12 @@ const Sidebar = () => {
         <AiOutlineDown />
       </div>
       <Collapse in={invOpen} className="text-xs">
-        <div className="flex items-center gap-2 py-2.5 pr-3.5 pl-5">
+      <NavLink to={'/products'}>
+      <div className="flex items-center gap-2 py-2.5 pr-3.5 pl-5">
           <BiRadioCircleMarked />
           <span>Products</span>
         </div>
+      </NavLink>
         <div className="flex items-center  gap-2 py-2.5 pr-3.5 pl-5">
           <BiRadioCircleMarked />
           <span>Add Product</span>

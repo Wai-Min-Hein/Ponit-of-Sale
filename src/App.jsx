@@ -59,7 +59,7 @@ const App = () => {
         <Route path="/create_t" element={<TCreate/>}/>
         <Route path="/ban_user" element={<BanUser/>}/>
         {/* <----product----> */}
-        <Route path="/prod_view" element={<ProductOverview/>}/>
+        <Route path="/products" element={<ProductOverview/>}/>
         <Route path="/addproduct" element={<AddProduct/>}/>
         <Route path="/addprice" element={<AddPrice/>}/>
         <Route path="/photoproduct" element={<ProductPhoto/>}/>

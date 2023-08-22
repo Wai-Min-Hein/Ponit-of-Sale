@@ -1,5 +1,4 @@
-import { Button, CheckIcon, Group, Modal, Pagination, Table,Tabs,Text } from '@mantine/core'
-import { useDisclosure } from '@mantine/hooks'
+import { Button, Group, Modal, Pagination, Table,Tabs,Text } from '@mantine/core'
 import React, { useState } from 'react'
 import {AiOutlinePlus,AiOutlineMinus,AiOutlineEdit,AiOutlineArrowRight,AiOutlineSearch} from 'react-icons/ai'
 import { BiMinus } from 'react-icons/bi'
@@ -7,14 +6,14 @@ import { Link, useNavigate } from 'react-router-dom'
 import '../../styles/userlist.css';
 const ProductOverview = () => {
   const [search,setSearch] = useState('')
-  const [opened, { open, close }] = useDisclosure(false);
   const nav = useNavigate()
+  const [open,setOpen] = useState(false)
   const handleBan = ()=>{
     nav('/ban_user')
   }
   return (
-    <section className='bg-bg min-h-screen'>
-    <div className='container mx-auto grid gap-5'>
+    <section className='bg-bg min-h-screen w-full p-6'>
+    <div className=' mx-auto grid gap-5'>
       <div className="flex justify-between items-center py-3">
           <div>
           <h1 className='text-xl text-white mb-2'>Products</h1>
@@ -83,7 +82,7 @@ const ProductOverview = () => {
             <td>1,000</td>
             <td>100</td>
             <td className='flex gap-3 justify-end'>
-              <Button onClick={open} className='!px-0 hover:bg-bg'>
+              <Button onClick={()=>setOpen(!open)} className='!px-0 hover:bg-bg'>
               <AiOutlinePlus className='w-8 h-8 bg-border opacity-60 text-white rounded-full p-2'/>
               </Button>
               <Link to={'/edit'}>
@@ -113,21 +112,20 @@ const ProductOverview = () => {
         },
       })}/>
       </div>
-     
-      <Modal opened={opened} onClose={close} centered title="Ban User" size="lg">
-        <div className='w-32 h-32 mx-auto rounded-full bg-gray-100 flex justify-center items-center'>
-        <BiMinus className='text-danger p-7 bg-gray-100 opacity-60 border border-danger w-20 h-20 rounded-full'/>
-        </div>
-        <Text className='text-xl '>Do you want to ban this user?</Text>
-        <Group mt="xl" position='center' className='flex gap-10'>
-          <Button className='border border-white font-normal transition pt-1 hover:bg-white hover:text-gray-50' onClick={close}>
-            CANCEL
-          </Button>
-          <Button className='border bg-danger font-normal text-center pt-1 transition hover:bg-white hover:text-danger' onClick={handleBan}>
-            BAN USER
-          </Button>
-        </Group>
-      </Modal>
+      
+     <div onClick={()=>setOpen(false)} className={ open ? 'h-full w-full bg-bg-dark opacity-60 fixed top-0 right-0 transition block' : 'hidden'}></div>
+     <div className={open ? 'h-full w-1/4 bg-bg fixed top-0 right-0 p-6' : 'transition right-[-50px]'}>
+      <h1 className='text-white text-2xl text-center mb-6'>Add Stock</h1>
+      <div className='mb-6'>
+        <label htmlFor="quantity" className='text-lg'>Quantity</label>
+        <input type="text" className='border border-border p-2 rounded bg-bg'/>
+      </div>
+      <div>
+        <label htmlFor="more" className='text-lg'>more</label>
+        <input type="text" className='border border-border p-2 rounded bg-bg'/>
+      </div>
+     </div>
+      
     
     </div>
     </section>

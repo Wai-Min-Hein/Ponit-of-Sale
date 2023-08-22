@@ -1,0 +1,50 @@
+.mantine-189n011:hover {
+  background-color: #3f4245;
+}
+
+.mantine-wabc63 > thead > tr > th {
+  border-bottom: 0.0625rem solid #3f4245;
+}
+
+.mantine-wabc63 > thead > tr > th,
+.mantine-wabc63 > tfoot > tr > th,
+.mantine-wabc63 > tbody > tr > th {
+  color: #ffffff;
+}
+.mantine-wabc63 > tbody > tr > td {
+  /* padding: 0.75rem 0.75rem; */
+  border-top: 0.0625rem solid #3f4245;
+  /* font-size: 0.875rem; */
+}
+.mantine-wabc63 > tbody > tr:hover {
+  background-color: #3f4245;
+}
+
+/* Paginate */
+/* link buttons */
+.mantine-1gjl6xq[data-active] {
+  border-color: transparent;
+  color: #fff;
+  background-color: #25262b;
+}
+.mantine-1gjl6xq:not([data-disabled]) {
+  color: #fff;
+}
+.mantine-1gjl6xq:not([data-disabled]):hover {
+  background-color: #202124;
+}
+/* arrows */
+.mantine-1fn7mrg[data-disabled] {
+    color: #fff;
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.mantine-1fn7mrg:not([data-disabled]) {
+    background-color: #202124;
+    color: #fff;
+}
+.mantine-1fn7mrg:not([data-disabled]):hover {
+    background-color: #3f4245;
+}

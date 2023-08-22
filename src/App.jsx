@@ -29,6 +29,7 @@ import Sidebar from "./Components/Sidebar";
 import Navbar from "./Components/Navbar";
 import { useState } from "react";
 import SidebarJr from "./Components/SidebarJr";
+import Media from "./Pages/Media"
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -70,6 +71,7 @@ const App = () => {
         <Route element={<ProfileEdit />} path="/edit" />
         <Route element={<Cashier />} path="/cashier" />
         <Route element={<Checkout />} path="/checkout" />
+        <Route path="/media" element={<Media/>} />
     </Routes>
       </div>
 

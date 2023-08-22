@@ -17,12 +17,13 @@ const CashierProduct = ({product}) => {
         dispatch(addToReceive({...product, quantity:1}))
     )} className="basis-[23.5%] rounded-md overflow-hidden cursor-pointer border-2 border-gray-50">
         <div className="w-full h-[10rem] ">
-            <img src={product?.image} className="block w-full h-full object-cover" alt="" />
+            <img src={product?.photo} className="block w-full h-full object-cover" alt="" />
         </div>
         <div className="px-6 py-4 text-right">
 
-        <h4>{product?.title}</h4>
-        <p>{product?.price} ks</p>
+        <h4>{product?.name}</h4>
+        <p>{product?.sale_price
+} ks</p>
         </div>
     </div>
   )

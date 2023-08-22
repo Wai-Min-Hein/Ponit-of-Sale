@@ -1,0 +1,32 @@
+
+/* set the width and height of your scrollbar */
+.receive-product::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: rgba(0,255,255,0.3);
+
+  }
+  
+  
+  /*style the track of your scrollbar*/
+  .receive-product::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #D9D9D9;
+
+  }
+  
+  /*change background color of your scrollbar on hover*/
+  .receive-product::-webkit-scrollbar:hover {
+    background-color: #D9D9D9;
+
+  } 
+  
+  
+  /*style the thumb of your scrollbar*/
+  .receive-product::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #787f80;
+  
+  }
+
+  

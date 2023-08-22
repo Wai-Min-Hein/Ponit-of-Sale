@@ -1,13 +1,15 @@
 import { BsArrowLeft } from "react-icons/bs";
 import CheckoutComponent from "../Components/CheckoutComponent";
 import { Link } from "react-router-dom";
+
 const Checkout = () => {
   const products = JSON.parse(localStorage.getItem("products"));
 
-  const allTotal = products?.reduce((pv, cv) => cv.price * cv.quantity + pv, 0);
-  const tax = allTotal * 0.01;
+  const allTotal = products?.reduce((pv, cv) => cv.sale_price * cv.quantity + pv, 0);
+  const tax =( allTotal * 0.01).toFixed(2);
+
   return (
-    <div className="w-screen h-screen bg-bg ">
+    <div className="w-screen min-h-screen bg-bg overflow-auto">
       <div className=" p-4 border-2 border-border">
         <Link to={'/cashier'}>
         

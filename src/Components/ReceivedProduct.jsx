@@ -8,16 +8,15 @@ const ReceivedProduct = ({ product }) => {
   const isSelected = product?.id == selectedDiv;
 
   const dispatch = useDispatch();
-  const { num,onErase } = useContext(Context);
+  const { num,onErase,numClick } = useContext(Context);
 
+ 
 
 
 
   const localProducts = JSON.parse(localStorage.getItem("products"));
 
   const currentPds = localProducts.find((lPd) => lPd.id == product?.id);
-
-
 
 
   const toPayProduct = isSelected
@@ -30,10 +29,13 @@ const ReceivedProduct = ({ product }) => {
     setSelectedDiv(index);
   };
 
+
   useEffect(() => {
     isSelected && dispatch(changeQtyByNum(toPayProduct));
+
     
-  }, [num]);
+  }, [numClick]);
+  
 
   useEffect(() => {
     const erasedQty =  Math.floor((isSelected && currentPds?.quantity) /10)
@@ -52,6 +54,10 @@ const ReceivedProduct = ({ product }) => {
     
   }, [onErase]) 
 
+  // useEffect(() => {
+   
+  // }, [localProducts])
+
   return (
     <div
       onClick={() =>
@@ -63,10 +69,10 @@ const ReceivedProduct = ({ product }) => {
       }`}
     >
       <div className="">
-        <h6>{product?.title}</h6>
+        <h6>{product?.name}</h6>
         <p>{product?.quantity}</p>
       </div>
-      <p>{product?.price * product?.quantity} ks</p>
+      <p>{(product?.sale_price * product?.quantity).toFixed(2)} ks</p>
     </div>
   );
 };

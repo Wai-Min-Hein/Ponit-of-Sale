@@ -7,7 +7,7 @@ const CheckoutComponent = ({ product, allTotal, tax }) => {
         <h1>{product?.title}</h1>
         <p>{product?.quantity}</p>
       </div>
-      <p>{product?.price * product?.quantity} ks</p>
+      <p>{product?.sale_price  * product?.quantity} ks</p>
     </div>
   );
 };

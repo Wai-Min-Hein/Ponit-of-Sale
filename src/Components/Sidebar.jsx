@@ -39,6 +39,7 @@ const Sidebar = () => {
       </div>
       <Collapse in={saleOpen} className="text-xs">
         <NavLink to={"/cashier"}>
+          
           <div className="flex items-center gap-2 py-2.5 pr-3.5 pl-5">
             <BiRadioCircleMarked />
             <span>Cashier</span>
@@ -120,10 +121,14 @@ const Sidebar = () => {
         <AiOutlineDown />
       </div>
       <Collapse in={pfOpen} className="text-xs">
+      <NavLink to={"/"}>
+
         <div className="flex items-center gap-2 py-2.5 pr-3.5 pl-5">
           <BiRadioCircleMarked />
           <span>My Account</span>
         </div>
+        </NavLink>
+
         <NavLink to={"/edit"}>
           <div className="flex items-center border-b border-border gap-2 py-2.5 pr-3.5 pl-5">
             <BiRadioCircleMarked />

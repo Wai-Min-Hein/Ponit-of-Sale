@@ -1,7 +1,7 @@
 
-
 import {useState } from "react";
 import {   useLoginMutation, useRegisterMutation } from "../Services/Api/AuthApi";
+
 
 import loginImage from "../../Images/loginImage.png";
 
@@ -12,27 +12,15 @@ import { PasswordInput, Button, TextInput, Checkbox } from "@mantine/core";
 
 const Login = () => {
   const [user, setUser] = useState({
-    email: "lex@gmail.com",
-    password: "asdffdsa",
   });
 
 
-  const regUser = {
-    name: 'wai min',
-    email: 'example@gmail.com',
-    password: '11111111',
-    address: 'No. 11, example str, example city',
-    gender: 'Male',
-    date_of_birth: '11/11/2003'
 
-   
-  }
   
 
 
   const [login] = useLoginMutation();
 
-  const [register] = useRegisterMutation()
 
 
 
@@ -52,27 +40,13 @@ const Login = () => {
 
     try {
       const {data} = await login(user);
-      console.log(data)
-      localStorage.setItem("token", data?.plainTextToken);
+      localStorage.setItem("token", data?.plainTextToken.slice(3));
     } catch (error) {
       console.log("Cannot login.Try again", error);
     }
   };
 
-  const regHandler = async () => {
-    
-    try {
-      const res = await register(regUser);
-      if(res?.error){
-        console.log(res?.error)
-      }
-      if(res?.success){
-        console.log(res?.success)
-      }
-    } catch (error) {
-      console.log("Cannot register.Try again", error);
-    }
-  };
+  
 
   return (
     <div className=" w-screen h-screen flex justify-center items-center">
@@ -83,7 +57,7 @@ const Login = () => {
       <div className="basis-2/5 bg-bg h-full grid place-items-center">
        
 
-        <div className="w-1/2">
+        <div className="w-3/4">
           <h1  className="font-genos text-3xl font-semibold">POS</h1>
           <h4 className="font-m font-montserrat text-xl font-medium capitalize my-4">welcome back</h4>
           <p className="w-full whitespace-nowrap">
@@ -122,14 +96,7 @@ const Login = () => {
 
 
           </form>
-          <Button
-              type="submit"
-              className="px-4 py-2 bg-primary  rounded text-sm uppercase text-bg-dark tracking-wide font-semibold mt-6 w-full"
-              mt="sm"
-              onClick={() => regHandler()}
-            >
-              Register
-            </Button>
+         
         </div>
       </div>
     </div>

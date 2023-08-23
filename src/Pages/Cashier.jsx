@@ -50,57 +50,12 @@ const Cashier = () => {
   }, [])
   
 
-  // const products = [
-  //   {
-  //     id: 1,
-  //     title: "Strawberry",
-  //     price: 100,
-  //     image:
-  //       "https://i.pinimg.com/564x/19/f1/62/19f16271bcc0fbc90289d8e8b14ff6ad.jpg",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "orange",
-  //     price: 100,
-  //     image:
-  //       "https://i.pinimg.com/564x/82/ac/a1/82aca13013d0ed9230a361f55277885a.jpg",
-  //   },
-  //   {
-  //     id: 3,
-  //     title: "apple",
-  //     price: 100,
-  //     image:
-  //       "https://i.pinimg.com/564x/ae/8f/64/ae8f64663da204a539f33b7657d09b92.jpg",
-  //   },
-  //   {
-  //     id: 4,
-  //     title: "guava",
-  //     price: 100,
-  //     image:
-  //       "https://i.pinimg.com/564x/e9/c8/08/e9c808032368438f358607fb75626c48.jpg",
-  //   },
-  //   {
-  //     id: 5,
-  //     title: "mango",
-  //     price: 100,
-  //     image:
-  //       "https://i.pinimg.com/564x/a1/73/01/a17301e4018b1b2548d9e73a3f7a58c9.jpg",
-  //   },
-  //   {
-  //     id: 6,
-  //     title: "avocado",
-  //     price: 100,
-  //     image:
-  //       "https://i.pinimg.com/564x/0f/be/2e/0fbe2e876c0e457b2ae6a096dbbe7a35.jpg",
-  //   },
-  // ];
 
-  
 
   return (
-    <div className="w-screen h-screen  bg-bg flex items-center overflow-hidden">
+    <div className="w-screen h-[93vh] bg-bg flex items-center overflow-hidden">
       <div className="basis-2/3 h-full ">
-        <div className="flex items-center justify-between border-y border-gray-50 px-4 py-4 mt-2">
+        <div className="flex items-center justify-between border-y border-gray-50 px-4 py-4">
           <div className="flex-1 flex items-center justify-start gap-6">
             <div className="">
               <span>Sale / </span>
@@ -134,7 +89,7 @@ const Cashier = () => {
 
       <div className="basis-1/3 bg-bg-dark h-full mt-4 relative flex flex-col j justify-between">
         <div className="flex-1 overflow-auto receive-product">
-          <h1 className="mb-6">Receive</h1>
+          <h1 className="mb-2">Receive</h1>
           {receivedProduct?.map((product, index) => (
             <ReceivedProduct key={index} product={product} />
           ))}

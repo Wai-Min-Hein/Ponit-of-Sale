@@ -1,16 +1,12 @@
-import { Button, Group, Modal, Pagination, Table,Tabs,Text } from '@mantine/core'
+import { Button, Pagination, Table,Tabs,Text } from '@mantine/core'
 import React, { useState } from 'react'
-import {AiOutlinePlus,AiOutlineMinus,AiOutlineEdit,AiOutlineArrowRight,AiOutlineSearch} from 'react-icons/ai'
-import { BiMinus } from 'react-icons/bi'
-import { Link, useNavigate } from 'react-router-dom'
+import {AiOutlinePlus,AiOutlineEdit,AiOutlineArrowRight,AiOutlineSearch} from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 import '../../styles/userlist.css';
 const ProductOverview = () => {
   const [search,setSearch] = useState('')
-  const nav = useNavigate()
   const [open,setOpen] = useState(false)
-  const handleBan = ()=>{
-    nav('/ban_user')
-  }
+  
   return (
     <section className='bg-bg min-h-screen w-full p-6'>
     <div className=' mx-auto grid gap-5'>
@@ -120,7 +116,7 @@ const ProductOverview = () => {
         <label htmlFor="quantity" className='text-lg'>Quantity</label>
         <input type="text" className='border border-border p-2 rounded bg-bg'/>
       </div>
-      <div>
+      <div className='flex flex-col'>
         <label htmlFor="more" className='text-lg'>more</label>
         <input type="text" className='border border-border p-2 rounded bg-bg'/>
       </div>

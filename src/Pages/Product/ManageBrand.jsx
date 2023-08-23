@@ -13,8 +13,8 @@ const ManageBrand = () => {
     nav('/ban_user')
   }
   return (
-    <section className='bg-bg min-h-screen'>
-    <div className='container mx-auto grid gap-5'>
+    <section className='bg-bg min-h-screen w-full p-6'>
+    <div className=' mx-auto grid gap-5'>
       <div className="flex justify-between items-center py-3">
           <div>
           <h1 className='text-xl text-white mb-2'>Manage Brands</h1>

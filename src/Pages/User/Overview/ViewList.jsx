@@ -1,8 +1,9 @@
-import { Button, CheckIcon, Group, Modal, Pagination, Table,Text } from '@mantine/core'
+import { Button, Group, Modal, Pagination, Table,Text } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import React, { useState } from 'react'
-import {AiOutlinePlus,AiOutlineMinus,AiOutlineEdit,AiOutlineArrowRight,AiOutlineSearch} from 'react-icons/ai'
+import {AiOutlinePlus,AiOutlineMinus,AiOutlineEdit,AiOutlineArrowRight,AiOutlineSearch,AiOutlineUnorderedList} from 'react-icons/ai'
 import { BiMinus } from 'react-icons/bi'
+import { BsGrid } from 'react-icons/bs'
 import { Link, useNavigate } from 'react-router-dom'
 import "../../../styles/userlist.css"
 const ViewList = () => {
@@ -13,14 +14,14 @@ const ViewList = () => {
     nav('/ban_user')
   }
   return (
-    <section className='bg-bg min-h-screen'>
-    <div className='container mx-auto grid gap-5'>
+    <section className='bg-bg min-h-screen w-full p-6'>
+    <div className=' mx-auto grid gap-5'>
       <div className="flex justify-between items-center py-3">
           <div>
           <h1 className='text-xl text-white mb-2'>User</h1>
           <span className='text-gray-50'>User / Overview</span>
           </div>
-          <Link to={'/create_f'}>
+          <Link to={'/createuser'}>
           <button className='bg-primary flex items-center gap-2 text-bg-dark px-4 py-1 border-0 rounded-md transition hover:text-white'>
                 <AiOutlinePlus/>
                 <span>Create User</span>
@@ -49,6 +50,14 @@ const ViewList = () => {
               <option value="filter" >All File</option>
             </select>
           </span>
+          <div className=''>
+            <button>
+              <AiOutlineUnorderedList/>
+            </button>
+            <button>
+              <BsGrid/>
+            </button>
+          </div>
         </div>
       </div>
       

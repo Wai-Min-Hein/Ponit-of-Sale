@@ -67,18 +67,24 @@ const Sidebar = () => {
           <span>Products</span>
         </div>
       </NavLink>
-        <div className="flex items-center  gap-2 py-2.5 pr-3.5 pl-5">
+      <NavLink to={'/addproduct'}>
+      <div className="flex items-center  gap-2 py-2.5 pr-3.5 pl-5">
           <BiRadioCircleMarked />
           <span>Add Product</span>
         </div>
+      </NavLink>
+      <NavLink to={'/stock'}>
         <div className="flex items-center gap-2 py-2.5 pr-3.5 pl-5">
           <BiRadioCircleMarked />
           <span>Stock Control</span>
         </div>
+      </NavLink>
+      <NavLink to={'/managebrand'}>
         <div className="flex items-center border-b border-border gap-2 py-2.5 pr-3.5 pl-5">
           <BiRadioCircleMarked />
           <span>Manage Brands</span>
         </div>
+      </NavLink>
       </Collapse>
       {/* User */}
       <div
@@ -92,14 +98,18 @@ const Sidebar = () => {
         <AiOutlineDown />
       </div>
       <Collapse in={userOpen} className="text-xs">
-        <div className="flex items-center gap-2 py-2.5 pr-3.5 pl-5">
+       <NavLink to={'/overview'}>
+       <div className="flex items-center gap-2 py-2.5 pr-3.5 pl-5">
           <BiRadioCircleMarked />
           <span>Overview</span>
         </div>
+       </NavLink>
+        <NavLink to={'/createuser'}>
         <div className="flex items-center border-b border-border gap-2 py-2.5 pr-3.5 pl-5">
           <BiRadioCircleMarked />
           <span>Create User</span>
         </div>
+        </NavLink>
       </Collapse>
       {/* Media */}
       <div className="flex items-center border-b border-border gap-2 py-2.5 pr-3.5 pl-5">

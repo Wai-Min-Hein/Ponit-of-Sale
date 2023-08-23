@@ -26,14 +26,14 @@ const Upuser = () => {
     />
   ));
   return (
-    <section className='bg-bg min-h-screen'>
-      <div className='container mx-auto pb-10'>
+    <section className='bg-bg min-h-screen w-full p-6'>
+      <div className=' mx-auto pb-10'>
         <div className="flex justify-between items-center py-3 mb-10">
             <div>
             <h1 className='text-xl text-white '>User</h1>
             <span className='text-gray-50'>User / Overview</span>
             </div>
-            <Link to={'/view_user'}>
+            <Link to={'/overview'}>
             <button className='bg-primary text-bg-dark px-4 py-1 border-0 rounded-md transition hover:text-white'>
                 <span>User Information</span>
             </button>

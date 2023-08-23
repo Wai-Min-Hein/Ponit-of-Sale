@@ -44,7 +44,7 @@ const App = () => {
         {isSidebarOpen ? <SidebarJr /> : <Sidebar />}
         <Routes>
       {/* <---User---> */}
-        <Route path="/view_user" element={<ViewUser/>}>
+        <Route path="/overview" element={<ViewUser/>}>
           <Route index element={<Personal/>}/>
           <Route path="info" element={<LoginInfo/>}/>
           <Route path="password" element={<Password/>}/>
@@ -55,7 +55,7 @@ const App = () => {
           <Route path="password" element={<UpPassword/>}/>
         </Route>
         <Route path="/view_list" element={<ViewList/>}/>
-        <Route path="/create_f" element={<FCreate/>}/>
+        <Route path="/createuser" element={<FCreate/>}/>
         <Route path="/create_s" element={<SCreate/>}/>
         <Route path="/create_t" element={<TCreate/>}/>
         <Route path="/ban_user" element={<BanUser/>}/>

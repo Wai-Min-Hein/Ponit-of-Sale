@@ -26,8 +26,8 @@ const ViewUser = () => {
     />
   ));
   return (
-    <section className='bg-bg min-h-screen'>
-      <div className='container mx-auto'>
+    <section className='bg-bg min-h-screen w-full p-6'>
+      <div className=' mx-auto'>
         <div className="flex justify-between items-center py-3 mb-10">
             <div>
             <h1 className='text-xl text-white '>User</h1>

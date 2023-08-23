@@ -24,8 +24,8 @@ const AddPrice = () => {
 
     }
   return (
-    <section className='bg-bg min-h-screen'>
-    <div className='container mx-auto grid gap-10'>
+    <section className='bg-bg min-h-screen w-full p-6'>
+    <div className=' mx-auto grid gap-10'>
       <div className="flex justify-between items-center py-3 ">
           <div>
           <h1 className='text-xl text-white mb-2'>Add Product</h1>

@@ -4,6 +4,8 @@ export const Context = createContext()
 
 const ContextProvider =  ({children}) => {
 
+  const token = localStorage.getItem('token')
+
 
     const [num, setNum] = useState('')
     const [onErase, setOnErase] = useState('')

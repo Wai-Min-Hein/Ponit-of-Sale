@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Text } from "@mantine/core";
 import { Dropzone, IMAGE_MIME_TYPE } from "@mantine/dropzone";
 import { PiCloudArrowUp } from "react-icons/pi";

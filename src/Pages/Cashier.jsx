@@ -16,7 +16,18 @@ import "../styles/cashier.css";
 const Cashier = () => {
   const [search, setSearch] = useState("");
   const receivedProduct = useSelector((cashier) => cashier.cashier.products);
+  const items = receivedProduct.map(product => {
+    return {
+        id: product.id,
+        quantity: product.quantity
+    };
+});
 
+const productsToPayApi = {
+  "items": items  //array of objects with the following structure {"id":"1", "quantity":2}, where id is a string and
+} 
+
+console.log(productsToPayApi)
   const allTotal = receivedProduct?.reduce(
     (pv, cv) => cv.sale_price * cv.quantity + pv,
     0
@@ -39,6 +50,7 @@ const Cashier = () => {
 
   const getPds = async () => {
     const { data } = await getAllProducts(token);
+
 
     setAllProducts(data?.data);
   };

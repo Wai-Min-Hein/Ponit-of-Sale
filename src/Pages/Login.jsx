@@ -1,6 +1,6 @@
 
 import {useState } from "react";
-import {   useLoginMutation, useRegisterMutation } from "../Services/Api/AuthApi";
+import {   useLoginMutation, useLogoutMutation, useRegisterMutation } from "../Services/Api/AuthApi";
 
 
 import loginImage from "../../Images/loginImage.png";
@@ -15,11 +15,14 @@ const Login = () => {
   });
 
 
+  const token = localStorage.getItem('token')
+
 
   
 
 
   const [login] = useLoginMutation();
+  const [logout] = useLogoutMutation();
 
 
 
@@ -36,17 +39,39 @@ const Login = () => {
   const loginHandler = async (e) => {
     e.preventDefault();
     setUser(form.values);
+
     
 
     try {
       const {data} = await login(user);
+
+      console.log(data)
+
+      console.log(data?.plainTextToken.slice(3))
+
+
+
       localStorage.setItem("token", data?.plainTextToken.slice(3));
     } catch (error) {
       console.log("Cannot login.Try again", error);
     }
   };
 
-  
+  const logoutHandler = async () => {
+    
+    try {
+      const res = await logout(token);
+      console.log(res)
+      localStorage.removeItem('token')
+      
+    } catch (error) {
+      console.log(error)
+      
+    }
+
+    
+
+  }
 
   return (
     <div className=" w-screen h-screen flex justify-center items-center">
@@ -96,6 +121,16 @@ const Login = () => {
 
 
           </form>
+
+          <Button
+
+          onClick={logoutHandler}
+              type="submit"
+              className="px-4 py-2 bg-primary  rounded text-sm uppercase text-bg-dark tracking-wide font-semibold mt-6 w-full "
+              mt="sm"
+            >
+              logout
+            </Button>
          
         </div>
       </div>

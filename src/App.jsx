@@ -18,7 +18,7 @@ import ProfileEdit from "./Pages/ProfileEdit"
 import AddProduct from "./Pages/Product/Addproduct/AddProduct"
 import AddPrice from "./Pages/Product/Addproduct/Price"
 import ProductPhoto from "./Pages/Product/Addproduct/ProductPhoto"
-import Stock from "./Pages/Product/Stock"
+import Stock from "./Pages/Product/Stock/Stock"
 import ManageBrand from "./Pages/Product/ManageBrand"
 
 import Cashier from "./Pages/Cashier"

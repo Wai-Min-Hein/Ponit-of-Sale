@@ -3,13 +3,12 @@ import { AiOutlinePlus,AiOutlineEdit,AiOutlineArrowRight } from 'react-icons/ai'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const ListProduct = () => {
-  const [open,setOpen] = useState(false)
-  
+const StockList = () => {
+    const [open,setOpen] = useState(false)
 
   return (
-    <section>
-     <div className='grid gap-48'>
+   <section>
+        <div className='grid gap-48'>
       <Table className='text-white opacity-80 border border-border'>
         <thead>
           <tr className=''>
@@ -74,8 +73,8 @@ const ListProduct = () => {
         <input type="text" className='border border-border p-2 rounded bg-bg'/>
       </div>
      </div>
-    </section>
+   </section>
   )
 }
 
-export default ListProduct
+export default StockList

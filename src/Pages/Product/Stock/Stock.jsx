@@ -1,17 +1,27 @@
-import { Button, CheckIcon, Group, Modal, Pagination, Table,Tabs,Text } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import React, { useState } from 'react'
-import {AiOutlinePlus,AiOutlineMinus,AiOutlineEdit,AiOutlineArrowRight,AiOutlineSearch} from 'react-icons/ai'
-import { BiMinus } from 'react-icons/bi'
+import {AiOutlinePlus,AiOutlineSearch} from 'react-icons/ai'
+import {MdOutlineWindow,MdList} from 'react-icons/md'
 import { Link, useNavigate } from 'react-router-dom'
-import '../../styles/userlist.css';
+import '../../../styles/userlist.css';
+import StockGrid from './StockGrid'
+import StockList from './StockList'
 const Stock = () => {
   const [search,setSearch] = useState('')
-  const [opened, { open, close }] = useDisclosure(false);
   const nav = useNavigate()
+  const [view, setView] = useState("grid");
+
   const handleBan = ()=>{
     nav('/ban_user')
   }
+  const viewHandler = (views) => {
+    if (views == "grid") {
+      setView("grid");
+      //   console.log("grid");
+    } else {
+      setView("list");
+      //   console.log("list");
+    }}
   return (
     <section className='bg-bg min-h-screen w-full p-6'>
     <div className=' mx-auto grid gap-5'>
@@ -57,63 +67,28 @@ const Stock = () => {
               <option value="filter" >All File</option>
             </select>
           </span>
-          
+          <div className="flex text-border text-xl">
+          <button
+            onClick={() => viewHandler("list")}
+            className={`${
+              view == "list" && "text-primary"
+            } border border-primary p-1 rounded-s`}
+          >
+            <MdList />
+          </button>
+          <button
+            onClick={() => viewHandler("grid")}
+            className={`${
+              view == "grid" && "text-primary"
+            } border border-primary p-1 rounded-e`}
+          >
+            <MdOutlineWindow />
+          </button>
+          </div>
         </div>
       </div>
       
-      <div className='grid gap-48'>
-      <Table className='text-white opacity-80 border border-border'>
-        <thead>
-          <tr className=''>
-            <th>NO</th>
-            <th>PRODUCT NAME</th>
-            <th>USER NAME</th>
-            <th>ADD QUANTITY</th>
-            <th>CREATE AT</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className=''>
-            <td>1</td>
-            <td className=' uppercase'>water Melon</td>
-            <td className=' capitalize'>SNOW</td>
-            <td>5</td>
-            <td>12/10/2020</td>
-          </tr>
-        </tbody>
-      </Table>
-      <Pagination total={3} position='right'
-       styles={(theme) => ({
-        control: {
-          color: '#fff',
-          gap: 0,
-          border: '1px solid #3f4245',
-          ':hover':{
-            backgroundColor:'#787f80 !important ',
-          },
-          '&[data-active]': {
-            backgroundColor: "#D9D9D91A",
-            border: 0,
-            color: "#000"
-          },
-        },
-      })}/>
-      </div>
-     
-      <Modal opened={opened} onClose={close} centered title="Ban User" size="lg">
-        <div className='w-32 h-32 mx-auto rounded-full bg-gray-100 flex justify-center items-center'>
-        <BiMinus className='text-danger p-7 bg-gray-100 opacity-60 border border-danger w-20 h-20 rounded-full'/>
-        </div>
-        <Text className='text-xl '>Do you want to ban this user?</Text>
-        <Group mt="xl" position='center' className='flex gap-10'>
-          <Button className='border border-white font-normal transition pt-1 hover:bg-white hover:text-gray-50' onClick={close}>
-            CANCEL
-          </Button>
-          <Button className='border bg-danger font-normal text-center pt-1 transition hover:bg-white hover:text-danger' onClick={handleBan}>
-            BAN USER
-          </Button>
-        </Group>
-      </Modal>
+      {view == "grid" ? <StockGrid/>: <StockList/>}
     
     </div>
     </section>

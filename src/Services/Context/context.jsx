@@ -11,7 +11,7 @@ const ContextProvider =  ({children}) => {
     const [onErase, setOnErase] = useState('')
     const [selectedDiv, setSelectedDiv] = useState('');
     const [numClick, setNumClick] = useState(false);
-
+    const [search,setSearch] = useState('')
     
 
     const data = {num, setNum,selectedDiv, setSelectedDiv,onErase, setOnErase,numClick, setNumClick}

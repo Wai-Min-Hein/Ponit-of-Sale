@@ -15,11 +15,10 @@ import BanUser from "./Pages/User/BanUser/BanUser"
 import Login from "./Pages/Login"
 import Profile from "./Pages/Profile"
 import ProfileEdit from "./Pages/ProfileEdit"
-import ProductOverview from "./Pages/Product/ProductsOverview"
 import AddProduct from "./Pages/Product/Addproduct/AddProduct"
 import AddPrice from "./Pages/Product/Addproduct/Price"
 import ProductPhoto from "./Pages/Product/Addproduct/ProductPhoto"
-import Stock from "./Pages/Product/Stock"
+import Stock from "./Pages/Product/Stock/Stock"
 import ManageBrand from "./Pages/Product/ManageBrand"
 
 import Cashier from "./Pages/Cashier"
@@ -30,6 +29,7 @@ import Navbar from "./Components/Navbar";
 import { useState } from "react";
 import SidebarJr from "./Components/SidebarJr";
 import Media from "./Pages/Media"
+import ProductOverview from "./Pages/Product/ProductOverview/ProductsOverview"
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
